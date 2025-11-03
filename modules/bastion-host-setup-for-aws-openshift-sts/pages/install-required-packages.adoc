@@ -1,0 +1,38 @@
+#  Install Required Packages
+
+== Install Required Packages
+
+3. Page 2 – Install Required Packages
+
+3.1. Objective
+The objective of this step is to install all necessary packages on the bastion host to ensure a smooth setup process for AWS OpenShift STS.
+
+3.2. Steps
+
+Follow these steps to install the required packages:
+
+1. **Switch to root**: Begin by elevating your privileges to root using the following command:
+   ```
+   sudo -i
+   ```
+
+2. **Install required packages**: Use the `dnf` and `yum` package managers to install the necessary tools. Execute the following command:
+   ```
+   dnf install -y tmux wget podman jq golang unzip bind-utils squid openssl-devel git
+   yum-utils tigervnc tigervnc-server
+   ```
+   This command installs the following packages: `tmux`, `wget`, `podman`, `jq`, `golang`, `unzip`, `bind-utils`, `squid`, `openssl-devel`, `git`, `yum-utils`, and `tigervnc-server`.
+
+3. **(Optional) Install GUI group**: If you prefer a graphical user interface, you can install the "Server with GUI" group using the following command:
+   ```
+   dnf groupinstall -y "Server with GUI"
+   ```
+
+4. **Verify installations**: To ensure that the packages have been installed correctly, verify their presence using the following commands:
+   ```
+   which tmux wget podman git vncserver
+   rpm -q tmux wget podman git tigervnc-server
+   ```
+   These commands should return the full path of the installed binaries, confirming successful installation.
+
+By completing these steps, you will have installed all the required packages on your bastion host, preparing it for the subsequent stages of setting up AWS OpenShift STS.

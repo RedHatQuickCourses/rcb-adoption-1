@@ -1,10 +1,10 @@
-name: REPLACEREPONAME
-title: FIXME Course Title
+name: rcb-adoption-1
+title:  Bastion Host Setup for AWS OpenShift STS
 version: 1
 nav:
 - modules/ROOT/nav.adoc
 - modules/LABENV/nav.adoc
-- modules/chapter1/nav.adoc
-- modules/chapter2/nav.adoc
-- modules/chapter3/nav.adoc
+
+- modules/bastion-host-setup-for-aws-openshift-sts/nav.adoc
+
 - modules/appendix/nav.adoc

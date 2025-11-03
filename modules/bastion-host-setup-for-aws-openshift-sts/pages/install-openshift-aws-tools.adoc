@@ -1,0 +1,46 @@
+#  Install OpenShift & AWS Tools
+
+## Install OpenShift & AWS Tools
+
+### 5. Install OpenShift & AWS Tools
+
+**5.1. Objective**
+
+The objective of this section is to download and install all necessary Command Line Interface (CLI) tools: `oc`, `openshift-install`, `ccoctl`, `aws`, and `rosa`. These tools are essential for managing and interacting with OpenShift clusters on AWS using STS (Security Token Service).
+
+**5.2. Steps**
+
+1. **Create a working directory:**
+
+   Begin by creating a dedicated directory for downloading the necessary binaries. This ensures that all related files are organized in one place.
+
+   ```bash
+   mkdir -p ~/downloads
+   cd ~/downloads
+   ```
+
+2. **Download binaries:**
+
+   Next, download the required CLI tools using `wget`. Replace `{OPENSHIFT_VERSION}` with the desired OpenShift version.
+
+   ```bash
+   wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/{OPENSHIFT_VERSION}/openshift-client-linux.tar.gz
+   wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/{OPENSHIFT_VERSION}/openshift-install-linux.tar.gz
+   wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/{OPENSHIFT_VERSION}/ccoctl-linux-rhel9.tar.gz
+   wget https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+   wget https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz
+   ```
+
+3. **Extract archives:**
+
+   Extract the downloaded archive files using the `tar` command for `.tar.gz` files and `unzip` for the `.zip` file.
+
+   ```bash
+   tar -xzvf openshift-client-linux.tar.gz
+   tar -xzvf openshift-install-linux.tar.gz
+   tar -xzvf ccoctl-linux-rhel9.tar.gz
+   unzip awscli-exe-linux-x86_64.zip
+   tar -xzvf rosa-linux.tar.gz
+   ```
+
+4. **

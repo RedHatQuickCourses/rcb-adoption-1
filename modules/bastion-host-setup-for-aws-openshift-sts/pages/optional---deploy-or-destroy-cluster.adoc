@@ -1,0 +1,52 @@
+#  Optional - Deploy or Destroy Cluster
+
+== Optional - Deploy or Destroy Cluster
+
+This section provides instructions on how to deploy or destroy an OpenShift cluster using the prepared configuration.
+
+=== 8.1 Objective
+
+The objective of this optional section is to guide you through the process of creating or removing an OpenShift cluster with the configuration you've prepared. This will allow you to practice cluster deployment and understand the steps involved in cluster removal when it's no longer needed.
+
+=== 8.2 Steps
+
+Follow these steps to deploy or destroy your OpenShift cluster:
+
+1. **Deploy the cluster**
+
+   Navigate to the install directory and execute the following command to create the cluster:
+
+   ```bash
+   cd ~/install-dir
+   openshift-install create cluster --dir . --log-level=debug
+   ```
+
+   This command initiates the cluster creation process using the specified directory (`.`) for the configuration files. The `--log-level=debug` flag ensures detailed logging for troubleshooting purposes.
+
+2. **Verify installation**
+
+   After the cluster creation process is complete, log in to the cluster using the following command:
+
+   ```bash
+   oc login --kubeconfig install-dir/auth/kubeconfig
+   ```
+
+   Then, verify that the nodes have been successfully created by running:
+
+   ```bash
+   oc get nodes
+   ```
+
+   This command lists all nodes in the cluster, confirming that the deployment was successful.
+
+3. **Destroy cluster when no longer needed**
+
+   When you're finished using the cluster, you can safely remove it with the following command:
+
+   ```bash
+   openshift-install destroy cluster --dir . --log-level=debug
+   ```
+
+   This command will delete the OpenShift cluster along with all its resources, ensuring that no unnecessary infrastructure costs accrue. The `--log-level=debug` flag provides detailed logs during the destruction process.
+
+By completing this optional section, you'll gain hands-on experience in deploying and destroying OpenShift clusters, which is essential for managing and maintaining OpenShift environments in AWS.

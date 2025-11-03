@@ -1,0 +1,68 @@
+#  Prepare Install Directory
+
+## Prepare Install Directory
+
+### 7. Prepare Install Directory
+
+#### 7.1. Objective
+
+The objective of this page is to set up the OpenShift installer directory and inject Security Token Service (STS) manifests and Transport Layer Security (TLS) files. This step is crucial for configuring AWS STS credentials and preparing the environment for OpenShift installation.
+
+#### 7.2. Steps
+
+1. **Create install directory**
+
+   Begin by creating a dedicated directory for the OpenShift installer. This can be done using the following command:
+
+   ```bash
+   mkdir -p ~/install-dir
+   ```
+
+   This command creates a new directory named `install-dir` in the user's home directory (`~`). The `-p` flag ensures that any necessary parent directories are also created.
+
+2. **Copy the installation configuration**
+
+   Next, copy the installation configuration file (`install-config.yaml`) into the newly created directory:
+
+   ```bash
+   cp install-config.yaml install-dir/
+   ```
+
+   To ensure proper permissions, set the file mode to 0644:
+
+   ```bash
+   chmod 0644 install-dir/install-config.yaml
+   ```
+
+3. **Generate manifests**
+
+   Generate the required manifests for the OpenShift installation using the following command:
+
+   ```bash
+   openshift-install create manifests --dir install-dir
+   ```
+
+   This command generates the necessary manifests based on the configuration specified in `install-config.yaml` and places them in the `install-dir` directory.
+
+4. **Copy STS artifacts**
+
+   Copy the STS manifests and TLS files from the source directory (`~/sts`) to the `install-dir/manifests` and `install-dir` directories, respectively:
+
+   ```bash
+   cp -r ~/sts/manifests/* install-dir/manifests/
+   cp -r ~/sts/tls install-dir/
+   ```
+
+   These files contain the necessary configurations for integrating AWS STS with OpenShift.
+
+5. **Validate**
+
+   Finally, validate the structure of the `install-dir` directory to ensure that all required files and subdirectories are present:
+
+   ```bash
+   tree install-dir
+   ```
+
+   This command will display the directory structure, confirming that the installation directory is correctly set up and contains all necessary files.
+
+By following these steps, you will have prepared the install directory with

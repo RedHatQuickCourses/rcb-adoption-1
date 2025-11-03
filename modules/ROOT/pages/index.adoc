@@ -1,22 +1,21 @@
-= An Example Quick Course
+=  Bastion Host Setup for AWS OpenShift STS
 :navtitle: Home
 
 == Introduction
 
-Course Title: Course title FIXME
+Course Title:  Bastion Host Setup for AWS OpenShift STS
 
 Description:
 Course description FIXME
 
 Duration: FIXME hours
 
-== Objectives
+== Topics covered in this course
 
-On completing this course, you should be able to:
 
-* Observable, measurable objective...
-* Observable, measurable objective...
-* Observable, measurable objective...
+*  Bastion Host Setup for AWS OpenShift STS
+
+
 
 == Prerequisites
 

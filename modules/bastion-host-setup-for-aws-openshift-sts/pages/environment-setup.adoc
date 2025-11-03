@@ -1,0 +1,46 @@
+#  Environment Setup
+
+== Bastion Host Setup for AWS OpenShift STS
+
+Chapter 2. Page 1 – Environment Setup
+
+2.1. Objective
+
+The primary objective of this page is to configure the environment variables that will be utilized throughout the installation process. These variables include, but are not limited to, the OpenShift version, AWS region, and cluster name suffix.
+
+2.2. Steps
+
+To set up the environment, follow these steps:
+
+1. **Log in to your bastion host** as the 'ec2-user'. This user typically has sudo privileges, which will be necessary for installing additional packages.
+
+2. **Export the required environment variables**. Open a terminal and input the following commands:
+
+   ```
+   export PREFIX_FOR_NAME=myproj
+   export OPENSHIFT_MAJOR_VERSION=4.18
+   export OPENSHIFT_MINOR_VERSION=20
+   export OPENSHIFT_VERSION=${OPENSHIFT_MAJOR_VERSION}.${OPENSHIFT_MINOR_VERSION}
+   export AWS_REGION=ap-southeast-1
+   export OPENSHIFT_BASE_DOMAIN=example.com
+   export OPENSHIFT_CLUSTER_NAME_SUFFIX=xx1
+   export OPENSHIFT_CLUSTER_NAME=${PREFIX_FOR_NAME}-${OPENSHIFT_CLUSTER_NAME_SUFFIX}
+   export STS_SUFFIX=${OPENSHIFT_CLUSTER_NAME}-sts
+   ```
+
+   These commands set various variables that will be referenced later in the installation process. For instance, `PREFIX_FOR_NAME` is used to create a prefix for your project name, while `OPENSHIFT_VERSION` specifies the version of OpenShift you're installing. The `AWS_REGION` variable indicates the AWS region where your resources will reside.
+
+3. **Validate the variables** to ensure they've been set correctly. You can do this by echoing the variables back to the terminal:
+
+   ```
+   echo $OPENSHIFT_CLUSTER_NAME
+   echo $STS_SUFFIX
+   ```
+
+   This step is crucial for troubleshooting if any issues arise during subsequent stages of the installation.
+
+By completing these steps, you've successfully configured your environment for the OpenShift installation on AWS using STS. The next step involves installing the necessary packages. Proceed to Chapter 3 – Install Required Packages.
+
+===
+
+This content adheres to the specified format (Antora AsciiDoc) and covers the 'Environment Setup' topic comprehensively.

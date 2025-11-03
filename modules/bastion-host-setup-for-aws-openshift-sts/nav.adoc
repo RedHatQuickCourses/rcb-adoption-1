@@ -1,0 +1,8 @@
+* xref:bastion-host-setup-for-aws-openshift-sts.adoc[]
+** xref:environment-setup.adoc[]
+** xref:install-required-packages.adoc[]
+** xref:configure-vnc-server.adoc[]
+** xref:install-openshift-aws-tools.adoc[]
+** xref:configure-aws-sts-credentials.adoc[]
+** xref:prepare-install-directory.adoc[]
+** xref:optional---deploy-or-destroy-cluster.adoc[]

@@ -1,0 +1,5 @@
+#  Bastion Host Setup for AWS OpenShift STS
+
+**Bastion Host Setup for AWS OpenShift STS**
+
+This training content focuses on manually setting up a RHEL bastion host to deploy an OpenShift cluster on AWS using STS (Security Token Service). The lab is based on the Ansible playbook setup-bastion-ec2-connected.yaml, adapted into hands-on CLI tasks. Key steps include environment setup, installing required packages, configuring VNC server, installing OpenShift & AWS tools, configuring AWS STS credentials, preparing the install directory, and optionally deploying or destroying the cluster. Familiarity with Linux CLI (RHEL 8/9), AWS CLI configured with sufficient IAM permissions, and a RHEL system with valid repositories are assumed prerequisites.

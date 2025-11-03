@@ -1,0 +1,63 @@
+#  Configure VNC Server
+
+== Configure VNC Server
+
+This section guides you through the process of creating a vncuser account and configuring TigerVNC to serve on display :99 (port 5999). This setup is crucial for remote graphical access to your AWS OpenShift STS environment.
+
+=== 4.1 Objective
+
+The primary objective of this section is to:
+
+- Create a new user, vncuser, with a set password.
+- Configure TigerVNC to map the display :99 to the vncuser account.
+- Enable and start the VNC service on the specified display.
+- Verify that the VNC service is running and listening on port 5999.
+- Optionally, open the firewall port for external access.
+
+=== 4.2 Steps
+
+Follow these steps to configure the VNC server:
+
+1. **Create User and Set Password**
+
+    Execute the following commands to create a new user named 'vncuser' and set its password:
+
+    ```bash
+    sudo useradd vncuser
+    sudo passwd vncuser
+    ```
+
+2. **Configure Display Mapping**
+
+    Add the following line to the /etc/tigervnc/vncserver.users file to map display :99 to the vncuser account:
+
+    ```bash
+    echo ':99=vncuser' | sudo tee -a /etc/tigervnc/vncserver.users
+    ```
+
+3. **Enable and Start the VNC Service**
+
+    Use the following commands to enable and start the VNC service on display :99:
+
+    ```bash
+    sudo systemctl enable vncserver@:99.service
+    sudo systemctl start vncserver@:99.service
+    ```
+
+4. **Verify**
+
+    Confirm that the VNC service is running and listening on port 5999 by executing:
+
+    ```bash
+    sudo netstat -tulpn | grep 5999
+    ```
+
+    If the service is running correctly, you should see a line indicating that the vncuser is listening on port 5999.
+
+5. **Optional - Open Firewall Port**
+
+    If you need to access the VNC server from outside the bastion host, open the required firewall port:
+
+    ```bash
+    sudo firewall-cmd --add-port=5999/tcp --permanent
+    sudo firewall-cmd

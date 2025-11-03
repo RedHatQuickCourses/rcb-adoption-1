@@ -1,6 +1,6 @@
 site:
-  title: FIXME Course Title
-  start_page: REPLACEREPONAME::index.adoc
+  title:  Bastion Host Setup for AWS OpenShift STS
+  start_page: rcb-adoption-1::index.adoc
 
 content:
   sources:
