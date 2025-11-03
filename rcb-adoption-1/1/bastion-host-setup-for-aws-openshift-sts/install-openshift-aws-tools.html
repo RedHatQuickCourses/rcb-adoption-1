@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Install OpenShift &amp; AWS Tools :: Bastion Host Setup for AWS OpenShift STS</title>
+    <link rel="prev" href="configure-vnc-server.html">
+    <link rel="next" href="configure-aws-sts-credentials.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Bastion Host Setup for AWS OpenShift STS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-adoption-1" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Bastion Host Setup for AWS OpenShift STS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="environment-setup.html">Environment Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-required-packages.html">Install Required Packages</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-vnc-server.html">Configure VNC Server</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="install-openshift-aws-tools.html">Install OpenShift &amp; AWS Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-aws-sts-credentials.html">Configure AWS STS Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prepare-install-directory.html">Prepare Install Directory</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="optional---deploy-or-destroy-cluster.html">Optional - Deploy or Destroy Cluster</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Bastion Host Setup for AWS OpenShift STS</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Bastion Host Setup for AWS OpenShift STS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a></li>
+    <li><a href="install-openshift-aws-tools.html">Install OpenShift &amp; AWS Tools</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Install OpenShift &amp; AWS Tools</h1>
+<div class="sect1">
+<h2 id="_install_openshift_aws_tools"><a class="anchor" href="#_install_openshift_aws_tools"></a>Install OpenShift &amp; AWS Tools</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_5_install_openshift_aws_tools"><a class="anchor" href="#_5_install_openshift_aws_tools"></a>5. Install OpenShift &amp; AWS Tools</h3>
+<div class="paragraph">
+<p><strong>5.1. Objective</strong></p>
+</div>
+<div class="paragraph">
+<p>The objective of this section is to download and install all necessary Command Line Interface (CLI) tools: <code>oc</code>, <code>openshift-install</code>, <code>ccoctl</code>, <code>aws</code>, and <code>rosa</code>. These tools are essential for managing and interacting with OpenShift clusters on AWS using STS (Security Token Service).</p>
+</div>
+<div class="paragraph">
+<p><strong>5.2. Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Create a working directory:</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Begin by creating a dedicated directory for downloading the necessary binaries. This ensures that all related files are organized in one place.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+mkdir -p ~/downloads
+cd ~/downloads
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Download binaries:</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Next, download the required CLI tools using `wget`. Replace `{OPENSHIFT_VERSION}` with the desired OpenShift version.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/{OPENSHIFT_VERSION}/openshift-client-linux.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/{OPENSHIFT_VERSION}/openshift-install-linux.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/{OPENSHIFT_VERSION}/ccoctl-linux-rhel9.tar.gz
+wget https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+wget https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Extract archives:</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Extract the downloaded archive files using the `tar` command for `.tar.gz` files and `unzip` for the `.zip` file.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+tar -xzvf openshift-client-linux.tar.gz
+tar -xzvf openshift-install-linux.tar.gz
+tar -xzvf ccoctl-linux-rhel9.tar.gz
+unzip awscli-exe-linux-x86_64.zip
+tar -xzvf rosa-linux.tar.gz
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>**</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="configure-vnc-server.html">Configure VNC Server</a></span>
+  <span class="next"><a href="configure-aws-sts-credentials.html">Configure AWS STS Credentials</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

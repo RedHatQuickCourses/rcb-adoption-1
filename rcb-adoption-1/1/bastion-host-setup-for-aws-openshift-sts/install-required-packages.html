@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Install Required Packages :: Bastion Host Setup for AWS OpenShift STS</title>
+    <link rel="prev" href="environment-setup.html">
+    <link rel="next" href="configure-vnc-server.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Bastion Host Setup for AWS OpenShift STS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-adoption-1" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Bastion Host Setup for AWS OpenShift STS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="environment-setup.html">Environment Setup</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="install-required-packages.html">Install Required Packages</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-vnc-server.html">Configure VNC Server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-openshift-aws-tools.html">Install OpenShift &amp; AWS Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-aws-sts-credentials.html">Configure AWS STS Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prepare-install-directory.html">Prepare Install Directory</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="optional---deploy-or-destroy-cluster.html">Optional - Deploy or Destroy Cluster</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Bastion Host Setup for AWS OpenShift STS</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Bastion Host Setup for AWS OpenShift STS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a></li>
+    <li><a href="install-required-packages.html">Install Required Packages</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Install Required Packages</h1>
+<div class="sect1">
+<h2 id="_install_required_packages"><a class="anchor" href="#_install_required_packages"></a>Install Required Packages</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Page 2 – Install Required Packages</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>3.1. Objective
+The objective of this step is to install all necessary packages on the bastion host to ensure a smooth setup process for AWS OpenShift STS.</p>
+</div>
+<div class="paragraph">
+<p>3.2. Steps</p>
+</div>
+<div class="paragraph">
+<p>Follow these steps to install the required packages:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Switch to root</strong>: Begin by elevating your privileges to root using the following command:
+<code>`
+sudo -i
+</code>`</p>
+</li>
+<li>
+<p><strong>Install required packages</strong>: Use the <code>dnf</code> and <code>yum</code> package managers to install the necessary tools. Execute the following command:
+<code>`
+dnf install -y tmux wget podman jq golang unzip bind-utils squid openssl-devel git
+yum-utils tigervnc tigervnc-server
+</code>`
+This command installs the following packages: <code>tmux</code>, <code>wget</code>, <code>podman</code>, <code>jq</code>, <code>golang</code>, <code>unzip</code>, <code>bind-utils</code>, <code>squid</code>, <code>openssl-devel</code>, <code>git</code>, <code>yum-utils</code>, and <code>tigervnc-server</code>.</p>
+</li>
+<li>
+<p><strong>(Optional) Install GUI group</strong>: If you prefer a graphical user interface, you can install the "Server with GUI" group using the following command:
+<code>`
+dnf groupinstall -y "Server with GUI"
+</code>`</p>
+</li>
+<li>
+<p><strong>Verify installations</strong>: To ensure that the packages have been installed correctly, verify their presence using the following commands:
+<code>`
+which tmux wget podman git vncserver
+rpm -q tmux wget podman git tigervnc-server
+</code>`
+These commands should return the full path of the installed binaries, confirming successful installation.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>By completing these steps, you will have installed all the required packages on your bastion host, preparing it for the subsequent stages of setting up AWS OpenShift STS.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="environment-setup.html">Environment Setup</a></span>
+  <span class="next"><a href="configure-vnc-server.html">Configure VNC Server</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

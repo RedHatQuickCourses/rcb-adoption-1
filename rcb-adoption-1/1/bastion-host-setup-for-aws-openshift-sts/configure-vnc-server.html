@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configure VNC Server :: Bastion Host Setup for AWS OpenShift STS</title>
+    <link rel="prev" href="install-required-packages.html">
+    <link rel="next" href="install-openshift-aws-tools.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Bastion Host Setup for AWS OpenShift STS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-adoption-1" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Bastion Host Setup for AWS OpenShift STS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="environment-setup.html">Environment Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-required-packages.html">Install Required Packages</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="configure-vnc-server.html">Configure VNC Server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-openshift-aws-tools.html">Install OpenShift &amp; AWS Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-aws-sts-credentials.html">Configure AWS STS Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prepare-install-directory.html">Prepare Install Directory</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="optional---deploy-or-destroy-cluster.html">Optional - Deploy or Destroy Cluster</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Bastion Host Setup for AWS OpenShift STS</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Bastion Host Setup for AWS OpenShift STS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a></li>
+    <li><a href="configure-vnc-server.html">Configure VNC Server</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Configure VNC Server</h1>
+<div class="sect1">
+<h2 id="_configure_vnc_server"><a class="anchor" href="#_configure_vnc_server"></a>Configure VNC Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section guides you through the process of creating a vncuser account and configuring TigerVNC to serve on display :99 (port 5999). This setup is crucial for remote graphical access to your AWS OpenShift STS environment.</p>
+</div>
+<div class="sect2">
+<h3 id="_4_1_objective"><a class="anchor" href="#_4_1_objective"></a>4.1 Objective</h3>
+<div class="paragraph">
+<p>The primary objective of this section is to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a new user, vncuser, with a set password.</p>
+</li>
+<li>
+<p>Configure TigerVNC to map the display :99 to the vncuser account.</p>
+</li>
+<li>
+<p>Enable and start the VNC service on the specified display.</p>
+</li>
+<li>
+<p>Verify that the VNC service is running and listening on port 5999.</p>
+</li>
+<li>
+<p>Optionally, open the firewall port for external access.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_2_steps"><a class="anchor" href="#_4_2_steps"></a>4.2 Steps</h3>
+<div class="paragraph">
+<p>Follow these steps to configure the VNC server:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Create User and Set Password</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Execute the following commands to create a new user named 'vncuser' and set its password:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+sudo useradd vncuser
+sudo passwd vncuser
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Configure Display Mapping</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Add the following line to the /etc/tigervnc/vncserver.users file to map display :99 to the vncuser account:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+echo ':99=vncuser' | sudo tee -a /etc/tigervnc/vncserver.users
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Enable and Start the VNC Service</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Use the following commands to enable and start the VNC service on display :99:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+sudo systemctl enable vncserver@:99.service
+sudo systemctl start vncserver@:99.service
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Verify</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Confirm that the VNC service is running and listening on port 5999 by executing:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+sudo netstat -tulpn | grep 5999
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>If the service is running correctly, you should see a line indicating that the vncuser is listening on port 5999.</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Optional - Open Firewall Port</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>If you need to access the VNC server from outside the bastion host, open the required firewall port:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+sudo firewall-cmd --add-port=5999/tcp --permanent
+sudo firewall-cmd</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="install-required-packages.html">Install Required Packages</a></span>
+  <span class="next"><a href="install-openshift-aws-tools.html">Install OpenShift &amp; AWS Tools</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

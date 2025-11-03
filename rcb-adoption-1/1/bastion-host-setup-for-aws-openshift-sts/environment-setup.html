@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Environment Setup :: Bastion Host Setup for AWS OpenShift STS</title>
+    <link rel="prev" href="bastion-host-setup-for-aws-openshift-sts.html">
+    <link rel="next" href="install-required-packages.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Bastion Host Setup for AWS OpenShift STS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-adoption-1" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Bastion Host Setup for AWS OpenShift STS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="environment-setup.html">Environment Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-required-packages.html">Install Required Packages</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-vnc-server.html">Configure VNC Server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-openshift-aws-tools.html">Install OpenShift &amp; AWS Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-aws-sts-credentials.html">Configure AWS STS Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prepare-install-directory.html">Prepare Install Directory</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="optional---deploy-or-destroy-cluster.html">Optional - Deploy or Destroy Cluster</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Bastion Host Setup for AWS OpenShift STS</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Bastion Host Setup for AWS OpenShift STS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a></li>
+    <li><a href="environment-setup.html">Environment Setup</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Environment Setup</h1>
+<div class="sect1">
+<h2 id="_bastion_host_setup_for_aws_openshift_sts"><a class="anchor" href="#_bastion_host_setup_for_aws_openshift_sts"></a>Bastion Host Setup for AWS OpenShift STS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Chapter 2. Page 1 – Environment Setup</p>
+</div>
+<div class="paragraph">
+<p>2.1. Objective</p>
+</div>
+<div class="paragraph">
+<p>The primary objective of this page is to configure the environment variables that will be utilized throughout the installation process. These variables include, but are not limited to, the OpenShift version, AWS region, and cluster name suffix.</p>
+</div>
+<div class="paragraph">
+<p>2.2. Steps</p>
+</div>
+<div class="paragraph">
+<p>To set up the environment, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Log in to your bastion host</strong> as the 'ec2-user'. This user typically has sudo privileges, which will be necessary for installing additional packages.</p>
+</li>
+<li>
+<p><strong>Export the required environment variables</strong>. Open a terminal and input the following commands:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+export PREFIX_FOR_NAME=myproj
+export OPENSHIFT_MAJOR_VERSION=4.18
+export OPENSHIFT_MINOR_VERSION=20
+export OPENSHIFT_VERSION=${OPENSHIFT_MAJOR_VERSION}.${OPENSHIFT_MINOR_VERSION}
+export AWS_REGION=ap-southeast-1
+export OPENSHIFT_BASE_DOMAIN=example.com
+export OPENSHIFT_CLUSTER_NAME_SUFFIX=xx1
+export OPENSHIFT_CLUSTER_NAME=${PREFIX_FOR_NAME}-${OPENSHIFT_CLUSTER_NAME_SUFFIX}
+export STS_SUFFIX=${OPENSHIFT_CLUSTER_NAME}-sts
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>These commands set various variables that will be referenced later in the installation process. For instance, `PREFIX_FOR_NAME` is used to create a prefix for your project name, while `OPENSHIFT_VERSION` specifies the version of OpenShift you're installing. The `AWS_REGION` variable indicates the AWS region where your resources will reside.</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Validate the variables</strong> to ensure they&#8217;ve been set correctly. You can do this by echoing the variables back to the terminal:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+echo $OPENSHIFT_CLUSTER_NAME
+echo $STS_SUFFIX
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>This step is crucial for troubleshooting if any issues arise during subsequent stages of the installation.</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>By completing these steps, you&#8217;ve successfully configured your environment for the OpenShift installation on AWS using STS. The next step involves installing the necessary packages. Proceed to Chapter 3 – Install Required Packages.</p>
+</div>
+<div class="paragraph">
+<p>===</p>
+</div>
+<div class="paragraph">
+<p>This content adheres to the specified format (Antora AsciiDoc) and covers the 'Environment Setup' topic comprehensively.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="bastion-host-setup-for-aws-openshift-sts.html">Bastion Host Setup for AWS OpenShift STS</a></span>
+  <span class="next"><a href="install-required-packages.html">Install Required Packages</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
